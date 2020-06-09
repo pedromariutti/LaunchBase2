@@ -1,0 +1,54 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>
+        Filmes
+    </title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+        <h1>Filmes</h1>
+    </div>
+
+    <section class="cards">
+
+        {% for item in items %}
+        
+        <div class="card" id="{{item.id}}">
+            <div class="card-img">
+                <img src="img/Projeto T{{item.img}}.jpg">
+            </div>
+            <div class="card-content">
+                <p>{{item.title}} | {{item.year}}
+                </p>
+             </div>
+            <div class="card-info">
+                <p>Avaliação</p>
+                <p class="card-rating">{{item.rating}}</p>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </section>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="modal-content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+{% endblock %}
